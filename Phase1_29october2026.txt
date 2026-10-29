@@ -1,0 +1,151 @@
+GENAI / MACHINE LEARNING NOTES PHASE 1 — PARAMETERS & NEURAL NETWORKS
+
+1.  FEATURES vs PARAMETERS
+
+Feature = input information given to the model. Examples: house size,
+number of rooms.
+
+Parameter = value learned by the model during training. Examples:
+weights (w1, w2) and bias (b).
+
+Example: price = w1 × size + w2 × rooms + b
+
+If size changes from 1000 to 1500: → size is a FEATURE. → You are giving
+the model a new input.
+
+During learning: → PARAMETERS (weights and biases) change.
+
+When you give the model a new house: → INPUTS / FEATURES change.
+
+“A model learns” means: → The model changes its PARAMETERS (weights and
+biases) to reduce loss and make better predictions.
+
+2.  TRAINING LOOP
+
+Input ↓ Prediction / Guess ↓ Calculate Loss ↓ Calculate Gradient ↓
+Update Parameters ↓ Repeat
+
+Loss = tells us how wrong the prediction is. Gradient = tells us how to
+change the parameters. Learning rate = controls how big the parameter
+update is.
+
+Loss goes UP / bounces wildly: → Learning rate is probably TOO LARGE. →
+Decrease it.
+
+Loss goes down VERY SLOWLY / stays flat: → Learning rate is probably TOO
+SMALL. → Increase it.
+
+Backpropagation: → Calculates gradients for the parameters through the
+neural network layers.
+
+3.  NEURAL NETWORKS
+
+Simple model: price = w1 × size + w2 × rooms + b
+
+A simple formula mainly learns straight-line relationships.
+
+A neural network is a more powerful model made from many connected
+neurons.
+
+4.  NEURON
+
+A neuron:
+
+1.  Takes inputs: x1, x2, …
+2.  Calculates: z = w1 × x1 + w2 × x2 + b
+3.  Applies an activation function: output = activation(z)
+
+Parameters: → w1, w2 = weights → b = bias
+
+Inputs: → x1, x2, …
+
+5.  ACTIVATION FUNCTION
+
+Why do we need it?
+
+→ It adds NON-LINEARITY. → It lets the network learn complex patterns.
+
+Without activation functions: → Even a 10-layer network would
+essentially behave like one linear model.
+
+Common activation function: ReLU
+
+ReLU(z) = max(0, z)
+
+Rule: → Negative → 0 → Positive → same number
+
+Examples: ReLU(-5) = 0 ReLU(3) = 3
+
+6.  LAYERS
+
+Input Layer: → Receives raw features.
+
+Hidden Layers: → Contain many neurons. → Each layer uses outputs from
+the previous layer. → Earlier layers can learn simpler patterns. → Later
+layers combine them into complex patterns.
+
+Output Layer: → Produces the final answer.
+
+Deep Learning: → Neural networks with many hidden layers.
+
+7.  NEURAL NETWORK TRAINING
+
+The basic training process is the same as the simple model:
+
+Guess ↓ Loss ↓ Gradient ↓ Update parameters ↓ Repeat
+
+Difference: → Neural networks have many layers. → They have many more
+parameters. → Backpropagation calculates gradients through the layers.
+
+8.  LLM CONNECTION
+
+An LLM (Large Language Model) is a very large neural network.
+
+Its huge number of parameters are mainly: → Weights → Biases
+
+The same basic ideas still apply: → Parameters → Loss → Gradients →
+Learning rate → Training
+
+9.  WORKED EXAMPLE
+
+Given: w1 = 2 w2 = -1 b = 1 x1 = 3 x2 = 5
+
+Step 1: Calculate z
+
+z = w1 × x1 + w2 × x2 + b
+
+z = 2 × 3 + (-1) × 5 + 1
+
+z = 6 - 5 + 1
+
+z = 2
+
+Step 2: Apply ReLU
+
+ReLU(2) = max(0, 2) ReLU(2) = 2
+
+Final: z = 2 Neuron output = 2
+
+10. KEY MEMORY POINTS
+
+Feature = input given to the model. Parameter = value learned by the
+model.
+
+Neuron = weighted sum + bias + activation.
+
+ReLU = max(0, z).
+
+Activation function = adds non-linearity.
+
+Deep learning = neural networks with many layers.
+
+Training = prediction → loss → gradient → parameter update.
+
+LLM = a very large neural network with billions of parameters.
+
+PHASE 1 CHECK — COMPLETED
+
+Understanding: 9.5/10
+
+NEXT: Concept 4 — What an LLM is and how it generates text one token at
+a time.
